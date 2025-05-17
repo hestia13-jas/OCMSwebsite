@@ -1,0 +1,316 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #E9FBE5, #C2E5C2); 
+}
+
+header {
+    background: linear-gradient(135deg, #8BC34A, #4CAF50);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 128, 0, 0.3);
+    text-shadow: 2px 2px 8px rgba(0, 100, 0, 0.4);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.profile-wrapper {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.profile-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.4);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #ffffff;
+    border: 1px solid #A5D6A7;
+    box-shadow: 0 6px 12px rgba(76, 175, 80, 0.25);
+    border-radius: 6px;
+}
+
+.profile-wrapper.active .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #DFFAD9;
+    text-shadow: 0 0 10px rgba(144, 238, 144, 0.6);
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background: linear-gradient(135deg, #AEDFA4, #6FBF73);
+    padding-top: 50px;
+    margin-top: 82px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar nav ul li {
+    padding: 15px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.sidebar nav ul li:hover {
+    background: linear-gradient(135deg, #C8E6C9, #A5D6A7);
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+}
+
+.sidebar nav ul li a:hover {
+    color: #fff;
+    text-shadow: 0 0 12px rgba(144, 238, 144, 0.8);
+}
+
+main {
+    margin-left: 220px;
+    margin-top: 10px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-right: 20px;
+    box-shadow: 0 0 15px rgba(0, 128, 0, 0.1);
+}
+
+.create-room-div {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.create-room-div button {
+    background: #4CAF50;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    margin: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 128, 0, 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    height: 50px;
+    width: 530px;
+}
+
+.create-room-div button:hover {
+    background: linear-gradient(135deg, #A5D6A7, #C8E6C9);
+    box-shadow: 0 4px 12px rgba(0, 128, 0, 0.4);
+}
+
+.available-rooms-div h2 {
+    margin-bottom: 20px;
+}
+
+.room-category h4 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.document-card {
+    background: #E8F5E9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 80px;
+    width: 200px;
+}
+
+.document-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(76, 175, 80, 0.3);
+}
+
+.document-card a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.document-card a:hover {
+    color: #388E3C;
+    text-shadow: 0 0 8px rgba(144, 238, 144, 0.8);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 100, 0, 0.4);
+    align-items: center;
+    justify-content: center;
+    padding-top: 400px;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #ffffff, #D9F2D9);
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 6px 20px rgba(0, 100, 0, 0.3);
+    margin: 0 auto;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.modal input,
+.modal select,
+.modal button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(76, 175, 80, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.modal input:focus,
+.modal select:focus,
+.modal button:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+}
+
+.modal button {
+    background: linear-gradient(135deg, #66BB6A, #A5D6A7);
+    color: #fff;
+    cursor: pointer;
+}
+
+.modal button:hover {
+    background: linear-gradient(135deg, #A5D6A7, #66BB6A);
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #4CAF50;
+    text-shadow: 0 0 5px rgba(0, 100, 0, 0.3);
+}
+
+/* Sticky Notes */
+.sticky-notes-container {
+    display: flex;
+    gap: 15px;
+}
+
+.sticky-note {
+    background-color: #F1F8E9;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.2);
+}
+
+.sticky-note textarea {
+    width: 100%;
+    height: 150px;
+    border: none;
+    resize: none;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.1);
+}
+
+/* Schedule Tracker */
+.schedule-tracker {
+    margin-top: 20px;
+}
+
+.schedule-tracker table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.schedule-tracker th,
+.schedule-tracker td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.schedule-tracker th {
+    background-color: #66BB6A;
+    color: white;
+}
+
+.schedule-tracker tr:nth-child(even) {
+    background-color: #E0F2F1;
+}
+
+.schedule-tracker tr:hover {
+    background-color: #A5D6A7;
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    .sidebar nav ul li {
+        display: inline-block;
+        width: 33%;
+    }
+
+    main {
+        margin-left: 0;
+    }
+}
